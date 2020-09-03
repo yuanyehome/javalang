@@ -347,7 +347,7 @@ class JavaTokenizer(object):
             else:
                 break
 
-        if c in 'lL':
+        if c is not None and c in 'lL':
             self.j += 1
 
     def read_decimal_integer(self):
@@ -367,6 +367,8 @@ class JavaTokenizer(object):
         self.read_digits('01234567')
 
     def read_integer_or_float(self, c, c_next):
+        if c_next is None:
+            return self.read_decimal_float_or_integer()
         if c == '0' and c_next in 'xX':
             return self.read_hex_integer_or_float()
         elif c == '0' and c_next in 'bB':
