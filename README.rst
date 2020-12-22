@@ -16,6 +16,8 @@ http://docs.oracle.com/javase/specs/jls/se8/html/.
 
 The following gives a very brief introduction to using javalang.
 
+This repo fixed some small bugs while parsing "i=0" expression.
+
 ---------------
 Getting Started
 ---------------
